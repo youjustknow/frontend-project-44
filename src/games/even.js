@@ -1,4 +1,11 @@
-import { getRandom, getUserAnswer } from '../shared/utils.js';
+import {
+  getRandom,
+  getUserAnswer,
+  printCorrectAnswerMessage,
+  printRules,
+  printSuccessGameMessage,
+  printWrongAnswerMessage,
+} from '../shared/utils.js';
 
 const RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
 const GAMES_COUNT = 3;
@@ -12,33 +19,17 @@ const getNextQuestion = () => {
   return [number, correctAnswer];
 };
 
-const printRules = () => {
-  console.log(RULES);
-};
-
-const printExitGameMessage = (answer, correctAnswer, userName) => {
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
-};
-
-const printSuccessGameMessage = (userName) => {
-  console.log(`Congratulations, ${userName}!`);
-};
-
-const printCorrectAnswer = () => {
-  console.log('Correct!');
-};
-
 const startGameLoop = (userName) => {
   for (let gameNo = 1; gameNo <= GAMES_COUNT; gameNo += 1) {
     const [number, correctAnswer] = getNextQuestion();
     const answer = getUserAnswer(`Question: ${number}:`);
 
     if (answer !== correctAnswer) {
-      printExitGameMessage(answer, correctAnswer, userName);
+      printWrongAnswerMessage(answer, correctAnswer, userName);
       return 0;
     }
 
-    printCorrectAnswer();
+    printCorrectAnswerMessage();
   }
 
   printSuccessGameMessage(userName);
@@ -47,7 +38,7 @@ const startGameLoop = (userName) => {
 };
 
 const startEvenGame = (userName) => {
-  printRules();
+  printRules(RULES);
   startGameLoop(userName);
 };
 
