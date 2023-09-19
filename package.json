@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A collection of games to exercise your mind",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,5 +11,8 @@
   "license": "ISC",
   "bin": {
     "brain-games": "bin/brain-games.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }
