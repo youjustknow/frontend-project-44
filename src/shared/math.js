@@ -10,7 +10,7 @@ export const generateArithmeticProgression = (start, step, length) => Array(leng
   .map((num, index) => num + step * index);
 
 export const isPrime = (number) => {
-  for (let currentDivider = 2; currentDivider < Math.sqrt(number); currentDivider += 1) {
+  for (let currentDivider = 2; currentDivider <= Math.sqrt(number); currentDivider += 1) {
     if (number % currentDivider === 0) return false;
   }
 
