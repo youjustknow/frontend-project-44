@@ -1,9 +1,5 @@
-import startGameLoop from '../shared/gameLoop.js';
 import { getRandomNumber } from '../shared/math.js';
-import { printRules } from '../shared/utils.js';
 
-const RULES = 'What is the result of the expression?';
-const GAMES_COUNT = 3;
 const MIN_NUMBER = 1;
 const MAX_NUMBER = 10;
 const ALLOWED_OPERATORS = ['+', '*', '-'];
@@ -33,9 +29,4 @@ const getNextQuestion = () => {
   return [question, correctAnswer];
 };
 
-const startCalcGame = (userName) => {
-  printRules(RULES);
-  startGameLoop(userName, GAMES_COUNT, getNextQuestion);
-};
-
-export default startCalcGame;
+export default getNextQuestion;

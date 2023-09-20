@@ -1,9 +1,5 @@
-import startGameLoop from '../shared/gameLoop.js';
 import { generateArithmeticProgression, getRandomNumber } from '../shared/math.js';
-import { printRules } from '../shared/utils.js';
 
-const RULES = 'What number is missing in the progression?';
-const GAMES_COUNT = 3;
 const MIN_START_NUMBER = 1;
 const MAX_START_NUMBER = 100;
 const MIN_LENGTH = 5;
@@ -25,9 +21,4 @@ const getNextQuestion = () => {
   return [progression.join(' '), correctAnswer];
 };
 
-const startProgressionGame = (userName) => {
-  printRules(RULES);
-  startGameLoop(userName, GAMES_COUNT, getNextQuestion);
-};
-
-export default startProgressionGame;
+export default getNextQuestion;

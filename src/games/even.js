@@ -1,9 +1,5 @@
-import startGameLoop from '../shared/gameLoop.js';
 import { getRandomNumber } from '../shared/math.js';
-import { printRules } from '../shared/utils.js';
 
-const RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
-const GAMES_COUNT = 3;
 const MIN_NUMBER = 1;
 const MAX_NUMBER = 100;
 
@@ -14,9 +10,4 @@ const getNextQuestion = () => {
   return [number, correctAnswer];
 };
 
-const startEvenGame = (userName) => {
-  printRules(RULES);
-  startGameLoop(userName, GAMES_COUNT, getNextQuestion);
-};
-
-export default startEvenGame;
+export default getNextQuestion;

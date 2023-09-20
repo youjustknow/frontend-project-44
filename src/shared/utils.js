@@ -5,6 +5,8 @@ export const getUserAnswer = (question) => {
   return readlineSync.question('Your answer: ');
 };
 
+export const retriveUserName = () => readlineSync.question('May I have your name? ');
+
 export const printSuccessGameMessage = (userName) => {
   console.log(`Congratulations, ${userName}!`);
 };
