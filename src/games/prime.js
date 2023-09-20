@@ -6,11 +6,17 @@ const RULES = 'Find the greatest common divisor of given numbers.';
 const GAMES_COUNT = 3;
 const MIN_NUMBER = 1;
 const MAX_NUMBER = 100;
+const PRIME_PROBABILITY = 0.5;
+
+const isMustBePrime = () => Math.random() > PRIME_PROBABILITY;
 
 const getNextQuestion = () => {
-  const number = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+  const mustBePrime = isMustBePrime();
+  let number = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
 
-  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  while (isPrime(number) !== mustBePrime) number = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
+
+  const correctAnswer = mustBePrime ? 'yes' : 'no';
 
   return [number, correctAnswer];
 };
