@@ -1,5 +1,6 @@
 import startGameLoop from '../shared/gameLoop.js';
-import { getRandomNumber, printRules } from '../shared/utils.js';
+import { getRandomNumber } from '../shared/math.js';
+import { printRules } from '../shared/utils.js';
 
 const RULES = 'What is the result of the expression?';
 const GAMES_COUNT = 3;
